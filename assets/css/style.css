@@ -1,0 +1,23 @@
+/* GLOBAL / REUSABLE */
+
+h1 { font-size: 3rem; }
+h2 { font-size: 2rem; }
+
+.container {
+    width: 80%;
+    background-color: rgb(238, 238, 238);
+    margin: 0 auto;
+    margin-top: 3rem;
+    padding: 2rem;
+    text-align: center;
+}
+
+#word-box {
+    font-size: 2rem;
+    letter-spacing: 8px;
+    padding: 1rem;
+    margin: 0 auto;
+    margin-top: 3rem;
+    width: 80%;
+    background-color: rgba(0, 0, 255, 0.39);
+}
