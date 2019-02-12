@@ -1,55 +1,56 @@
 //-----------------// VARIABLES //-----------------//
-var words = ["volkswagen", "bmw", "ford", "chevrolet", "bugatti", "ferrari", "lamborghini"];
+var words = ["volkswagen", "bmw", "ford", "chevrolet", "bugatti", "ferrari", "lamborghini", "subaru", "hyundai", "honda"];
 var wordBox = document.getElementById("word-box");
+var guessedLettersBox = document.getElementById("guessed-letters");
 
+var correctGuesses = [];
+var incorrectGuesses = [];
 
+var guessCount = 13;
+var currentWord;
 
 //-----------------// FUNCTIONS //-----------------//
-var randomWord = function(arr) {
-    randomIndex = Math.floor(Math.random() * arr.length);
-    return arr[randomIndex];
+var getRandomWord = function () {
+    randNum = Math.floor(Math.random() * words.length);
+    return words[randNum];
 }
 
-var underscored = function(str) {
-    var altStr = [];
-    for (var i = 0; i < str.length; i++) {
-        altStr.push("_ ");
+var makeGuess = function(l) {
+    // Decrease guess count and display 
+    guessCount--;
+    document.getElementById("guesses").textContent = guessCount;
+
+    if (currentWord.indexOf(l) === -1) { 
+        // Letter is not in the current word, push it to wrong guesses array
+        incorrectGuesses.push(l);
+        guessedLettersBox.innerHTML = incorrectGuesses;
+    } else {
+        // Letter is correct, change underscore back to letter
+        for (var i = 0; i < currentWord.length; i++) {
+            if (currentWord[i] === l) {
+                // Assign the correct letter to the corresponding spot in the array
+                correctGuesses[i] = l;
+            }
+        }
+        // Update to DOM
+        wordBox.innerHTML = correctGuesses;
     }
-    return(altStr.join(" "));
 }
 
 
 //-----------------// PSUDO CODE //-----------------//
 
-// Key is pressed to start the game
-document.onkeydown = function() {
-    console.log("Keydown");
-};
+// Get word from array
+currentWord = getRandomWord(words);
 
-// Word is selected from data storage
-currentWord = randomWord(words);
+// Create array of underscores that match the length of the word
+for (var i = 0; i < currentWord.length; i++) {
+    correctGuesses.push("_");
+}
+// Join array and show underscores to DOM
+wordBox.innerHTML = correctGuesses.join(" ");
 
-// For each letter in the word, display that many underscores to DOM
-wordBox.textContent = underscored(currentWord);
- 
-// If the user selects a correct letter, the letter in the word shows up + one guess is used 
-document.onkeydown = function(e) {
-    keypress = e.key;
+// Set up onkeypress event listener
 
+// On keypress, fire makeGuess function by passing the keypress as the argument
 
-    // Check to see if keypress is included in current word
-    hasLetter = currentWord.includes(keypress);
-    console.log("Keypress "+ keypress + " = " + hasLetter);
-    // Take user input and compare to the current word
-    if (currentWord.includes(keypress)) {
-        // Find the index of the correct keypress within the current word
-        correctIndex = currentWord.indexOf(keypress);
-        console.log(correctIndex);
-    }
-};
-
-// If the user clicks a wrong letter, it is added to the 'used letters' section + one guess is used
-
-
-
-// 
