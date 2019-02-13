@@ -21,3 +21,11 @@ h2 { font-size: 2rem; }
     width: 80%;
     background-color: rgba(0, 0, 255, 0.39);
 }
+
+.guess-box,
+.win-box,
+.message-box {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: gray;
+}
