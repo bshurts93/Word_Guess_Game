@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,26 +9,31 @@
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
 
-    <div class="container">
-        <h1>Word Guess Game</h1>
-        <h2>Theme TBD</h2>
+    <div class="game-box">
+        <div class="container">
+            <h1>Word Guess Game</h1>
+            <h2>Fallout Edition</h2>
 
-        <div class="scorecard">
-            <h3 class="guess-box">Guesses Left: <span id="guesses"></span></h3>
-            <h3 class="win-box">Wins: <span id="wins">0</span></h3>
-            <h3 class="message-box">Message: <span id="message"></span></h3>
+            <div class="scorecard">
+                <h3 class="guess-box">Guesses Left: <span id="guesses"></span></h3>
+                <h3 class="win-box">Wins: <span id="wins">0</span></h3>
+                <h3 class="message-box">Message: <span id="message"></span></h3>
+            </div>
+
+            <div id="word-box"></div>
+
+            <div id="guessed-letters"></div>
         </div>
 
-        <div id="word-box"></div>
-
-        <div id="guessed-letters"></div>
     </div>
 
-    
-    
+
+
 
     <script src="assets/javascript/game.js"></script>
 </body>
+
 </html>

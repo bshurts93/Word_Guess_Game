@@ -17,6 +17,23 @@ var getRandomWord = function () {
     return words[randNum];
 }
 
+var underscored = function () {
+    for (var i = 0; i < currentWord.length; i++) {
+        correctGuesses.push("_");
+    }
+}
+
+var reset = function () {
+    // Reset word box to empty
+    wordBox.innerHTML = " ";
+    // Set guesses to 11 so that when any key is pressed, it displays as 11
+    guessCount = 11;
+    // Generate new word
+    currentWord = getRandomWord(words);
+    // Display new underscores
+    underscored();
+}
+
 var makeGuess = function (l) {
     if (incorrectGuesses.includes(l)) {
         // If the user has already guessed the selected letter, do nothing
@@ -26,8 +43,8 @@ var makeGuess = function (l) {
         guessCount--;
         document.getElementById("guesses").textContent = guessCount;
         // Letter is not in the current word, push it to wrong guesses array
-        incorrectGuesses.push(l);
-        guessedLettersBox.innerHTML = incorrectGuesses;
+        incorrectGuesses.push(l.toUpperCase());
+        guessedLettersBox.innerHTML = incorrectGuesses.join(" ");
     } else {
         // Letter is correct, change underscore back to letter
         for (var i = 0; i < currentWord.length; i++) {
@@ -43,6 +60,9 @@ var makeGuess = function (l) {
     // If user runs out of guesses, display game over
     if (guessCount === 0) {
         messageBox.innerHTML = "Loser!";
+
+        reset();
+
     }
 }
 
@@ -56,9 +76,7 @@ document.getElementById("guesses").innerHTML = guessCount;
 currentWord = getRandomWord(words);
 
 // Create array of underscores that match the length of the word
-for (var i = 0; i < currentWord.length; i++) {
-    correctGuesses.push("_");
-}
+underscored();
 // Join array and show underscores to DOM
 wordBox.innerHTML = correctGuesses.join(" ");
 
@@ -71,4 +89,3 @@ document.onkeydown = function (e) {
         makeGuess(keypress);
     }
 }
-

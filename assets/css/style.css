@@ -3,12 +3,20 @@
 h1 { font-size: 3rem; }
 h2 { font-size: 2rem; }
 
+body {
+    background-image: url("https://i.pinimg.com/originals/09/b5/fc/09b5fcb4d405b66d1f83c523b1c02121.jpg");
+    background-size: cover;
+    height: 100vh;
+}
+
+.game-box {
+    padding: 10rem;
+}
+
 .container {
     width: 80%;
     background-color: rgb(238, 238, 238);
     margin: 0 auto;
-    margin-top: 3rem;
-    padding: 2rem;
     text-align: center;
 }
 
@@ -27,5 +35,11 @@ h2 { font-size: 2rem; }
 .message-box {
     display: inline-block;
     padding: 1rem 2rem;
+    background-color: gray;
+}
+
+#guessed-letters {
+    padding: 1rem 2rem;
+    margin-top: 2rem;
     background-color: gray;
 }
