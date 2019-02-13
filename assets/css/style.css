@@ -1,12 +1,16 @@
 /* GLOBAL / REUSABLE */
 
-h1 { font-size: 3rem; }
-h2 { font-size: 2rem; }
+h1 { font-size: 3rem; padding: 1rem; }
+h2 { font-size: 2rem; padding: 1rem; }
+h3 { font-size: 1.3rem; margin: 1rem 2rem; }
 
 body {
     background-image: url("https://i.pinimg.com/originals/09/b5/fc/09b5fcb4d405b66d1f83c523b1c02121.jpg");
     background-size: cover;
     height: 100vh;
+    color: rgba(111, 250, 164, 0.733);
+    font-family: 'VT323', monospace;
+
 }
 
 .game-box {
@@ -15,19 +19,19 @@ body {
 
 .container {
     width: 80%;
-    background-color: rgb(238, 238, 238);
+    background-color: rgba(35, 201, 71, 0.185);
     margin: 0 auto;
     text-align: center;
 }
 
 #word-box {
-    font-size: 2rem;
+    font-size: 3rem;
     letter-spacing: 8px;
     padding: 1rem;
     margin: 0 auto;
     margin-top: 3rem;
     width: 80%;
-    background-color: rgba(0, 0, 255, 0.39);
+    background-color: rgba(39, 182, 158, 0.39);
 }
 
 .guess-box,
@@ -35,11 +39,13 @@ body {
 .message-box {
     display: inline-block;
     padding: 1rem 2rem;
-    background-color: gray;
+    font-size: 2rem;
+    background-color: rgba(128, 128, 128, 0.548);
 }
 
 #guessed-letters {
     padding: 1rem 2rem;
+    font-size: 2rem;
     margin-top: 2rem;
-    background-color: gray;
+    background-color: rgba(29, 109, 53, 0.445);
 }

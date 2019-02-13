@@ -1,5 +1,5 @@
 //-----------------// VARIABLES //-----------------//
-var words = ["volkswagen", "bmw", "ford", "chevrolet", "bugatti", "ferrari", "lamborghini", "subaru", "hyundai", "honda"];
+var words = ["megaton", "overseer", "radiation", "new vegas", "mutant", "pipboy", "stimpack", "radaway", "mentats"];
 var alphabet = ("abcdefghijklmnopqrstuvwxyz").split("");
 var wordBox = document.getElementById("word-box");
 var guessedLettersBox = document.getElementById("guessed-letters");
@@ -45,6 +45,9 @@ var makeGuess = function (l) {
         // Letter is not in the current word, push it to wrong guesses array
         incorrectGuesses.push(l.toUpperCase());
         guessedLettersBox.innerHTML = incorrectGuesses.join(" ");
+    } else if (wordBox.innerHTML.includes("_") === false) {
+        messageBox.innerHTML = "Winner!";
+        console.log("winner");
     } else {
         // Letter is correct, change underscore back to letter
         for (var i = 0; i < currentWord.length; i++) {
