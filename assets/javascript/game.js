@@ -22,7 +22,7 @@ var getRandomWord = function () {
 
 function underscored () {
     for (var i = 0; i < currentWord.length; i++) {
-        correctGuesses.push("_");
+        correctGuesses.push("*");
     }
 }
 
@@ -72,7 +72,7 @@ var makeGuess = function (l) {
             wordBox.innerHTML = correctGuesses.join(" ");
         }
 
-        if (wordBox.innerHTML.includes("_") === false) {
+        if (wordBox.innerHTML.includes("*") === false) {
             // Display to DOM
             messageBox.innerHTML = "Winner!";
             wins++
