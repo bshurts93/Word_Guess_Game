@@ -48,4 +48,5 @@ body {
     font-size: 2rem;
     margin-top: 2rem;
     background-color: rgba(29, 109, 53, 0.445);
+    text-transform: uppercase;
 }
